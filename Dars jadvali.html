@@ -1,0 +1,229 @@
+<html>
+<head>
+<title>Dars jadvali</title>
+<style>
+*{
+padding:0px;
+margin:0px;
+}
+body{
+background:#D2DBE5;
+font-family:arial;
+}
+font{
+font-weight:bold;
+font-size:16px;
+}
+ul{
+position:absolute;
+right:560px;
+list-style:none;
+margin:20px 0px;
+width:200px;
+height:200px;
+}
+li{
+text-indent:20px;
+border:1px solid black;
+border-radius:6px;
+font-size:30px;
+color:white;
+text-shadow:-1.2px 0px 2px #80B0FD,-2.4px 0px 2.5px #5D80B8,-3.6px 0px 2px black;
+height:32px;
+width:360px;
+margin:4px 0px;
+padding:12px;
+background:#4285F4;
+}
+li:hover{
+background:#1F3F72;
+border-color:#98CBF0;
+color:white;
+box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2),0 4px 16px 0 rgba(0,0,0,0.19);
+}
+#kun{
+text-align:center;
+text-indent:0px;
+background:#1F3F72;
+color:white;
+border-color:#98CBF0;
+font-weight:bold;
+font-size:32px;
+text-shadow:-0.8px 0px 2px #80B0FD,-1.6px 0px 2.5px #5D80B8,-2.4px 0px 2px #2A3A54;
+box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2),0 4px 16px 0 rgba(0,0,0,0.19);
+}
+.but{
+cursor:pointer;
+background:#4285F4;
+border-color:#98CBF0;
+color:white;
+font-size:16px;
+font-weight:bold;
+height:40px;
+width:150px;
+text-shadow:-0.6px 0px 2px #80B0FD,-1.2px 0px 2.5px #5D80B8,-2px 0px 2px black;
+}
+.but:hover{
+background:#1F3F72;
+box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2),0 4px 16px 0 rgba(0,0,0,0.19);
+}
+hr{
+margin:0px;
+}
+.tekst{
+margin:0px 80px;
+font-size:40px;
+color:white;
+text-shadow:-1px 0px 2px #80B0FD,-2px 0px 2.5px #5D80B8,-4px 0px 2px #2A3A54;
+}
+#day{
+margin:10px auto;
+}
+#head{
+background:#4285F4;
+border:2px solid #98CBF0;
+padding:4px;
+}
+</style>
+</head>
+<body>
+<div id="head"><center><font id="soat" class="tekst"></font><font class="tekst">Dars jadvali</font><font id="sana" class="tekst"></font></center></div>
+   <div id="day">
+	  <input class="but" type="button" value="Dushanba" onclick="my()"/>
+	  <input class="but" type="button" value="Seshanba" onclick="my2()"/>
+	  <input class="but" type="button" value="Chorshanba" onclick="my3()"/>
+	  <input class="but" type="button" value="Payshanba" onclick="my4()"/>
+	  <input class="but" type="button" value="Juma" onclick="my5()"/>
+	  <input class="but" type="button" value="Shanba" onclick="my6()"/>
+	  <input class="but" type="button" value="Yakshanba" onclick="my7()"/>
+	  
+   </div>
+   
+   <ul>
+		<li id="kun">Hafta kuni</li>
+		<li id="bir">1-dars</li> 	<li id="ikki">2-dars</li>   	<li id="uch">3-dars</li>	<li id="tort">4-dars</li>
+   </ul>
+   
+   <script type="text/javascript">
+   function vaqt(){
+      var a = new Date();
+	  
+	  soat = a.getHours();
+	  minut = a.getMinutes();
+	  sekund = a.getSeconds();
+	  kunn = a.getDay(); //if(kunn < 10){kunn = "0" + kunn;}
+	  oyy = a.getMonth(); //if(oyy < 10){oyy = "0" + oyy;}
+	  yill = a.getFullYear();
+	  if(soat < 10){soat = "0" + soat;}
+	  if(minut < 10){minut = "0" + minut;}
+	  if(sekund < 10){sekund = "0" + sekund;}
+	  document.getElementById("sana").innerText = kunn + "." + oyy + "." +yill;
+	  document.getElementById("soat").innerText = soat + ":" + minut + ":" + sekund;
+	  setTimeout('vaqt()',1000);}
+	  vaqt();
+	  
+      function my(){
+	               document.getElementById("kun").innerText = "Dushanba";
+				   document.getElementById("bir").innerText = "13 : 30 | Chet tili";
+				   document.getElementById("ikki").innerText = "15 : 00 | Mal. tiz.(lk)";
+				   document.getElementById("uch").innerText = "16 : 30 | Fizika(m)";
+                   document.getElementById("tort").innerText = "---";
+	  }
+	  function my2(){
+                   document.getElementById("kun").innerText = "Seshanba";
+				   document.getElementById("bir").innerText = "11 : 30 | HFX(lk)/. . .";
+				   document.getElementById("ikki").innerText = "13 : 30 | Jismoniy tar.";
+				   document.getElementById("uch").innerText = "15 : 00 | Fizika(lk)";
+                   document.getElementById("tort").innerText = "16 : 30 | HFX(lb/m)";
+	  }
+	  function my3(){
+	               document.getElementById("kun").innerText = "Chorshanba";
+				   document.getElementById("bir").innerText = "11 : 30 | BBA(m)";
+				   document.getElementById("ikki").innerText = "13 : 30 | Oliy M.(lk)";
+				   document.getElementById("uch").innerText = "15 : 00 | Fizika(lb/m)";
+				   document.getElementById("tort").innerText = "---";
+	  }
+	  function my4(){
+	               document.getElementById("kun").innerText = "Payshanba";
+				   document.getElementById("bir").innerText = "11 : 30 | . . ./Oliy M.(lk)";
+				   document.getElementById("ikki").innerText = "13 : 30 | MC va C(lk)";
+				   document.getElementById("uch").innerText = "15 : 00 | C++ das.(lk)";
+				   document.getElementById("tort").innerText = "16 : 30 | MC va C(m.)/. . .";
+	  }
+	  function my5(){
+	               document.getElementById("kun").innerText = "Juma";
+				   document.getElementById("bir").innerText = "13 : 30 | Mal. tuz(m)/. . .";
+				   document.getElementById("ikki").innerText = "15 : 00 | C++ das.(lb)";
+				   document.getElementById("uch").innerText = "16 : 30 | Fizika(lb)";
+				   document.getElementById("tort").innerText = "---";
+	  }
+	  function my6(){
+	               document.getElementById("kun").innerText = "Shanba";
+				   document.getElementById("bir").innerText = "11 : 30 | . . ./C++ das.(lb)";
+				   document.getElementById("ikki").innerText = "13 : 30 | Oliy M.(m)";
+				   document.getElementById("uch").innerText = "15 : 00 | BBA(lk)";
+				   document.getElementById("tort").innerText = "16 : 30 | Mal. tuz.(lb)";
+	  }
+	  function my7(){
+	               document.getElementById("kun").innerText = "Yakshanba";
+                   document.getElementById("bir").innerText = "Dam olish kuni";	
+				   document.getElementById("ikki").innerText = "---";
+				   document.getElementById("uch").innerText = "---";
+				   document.getElementById("tort").innerText = "---";
+	  }
+      /*function my(form){
+         var a = document.getElementById("so").value;
+         switch(a){
+			case "Dushanba" : document.write("<ul><p><li>Dushanba</li></p><li>Chet tili</li><li>Ma'lumotlar tuzilmasi(l.)</li><li>Fizikia(m.)</li>"); 
+				   document.getElementById("kun").innerText = "Dushanba";
+				   document.getElementById("bir").innerText = "13 : 30 | Chet tili";
+				   document.getElementById("ikki").innerText = "15 : 00 | Mal. tiz.(lk)";
+				   document.getElementById("uch").innerText = "16 : 30 | Fizika(m)";
+                   document.getElementById("tort").innerText = "---";				   break;
+			case "Seshanba" : document.write("<ul><p><li>Seshanba</li></p><li>HFX(l.)/. . .</li>Jismoniy tarbiya<li></li><li>Fizikia(l.)</li><li>HFX(lb./m.)</li>");
+				   document.getElementById("kun").innerText = "Seshanba";
+				   document.getElementById("bir").innerText = "11 : 30 | HFX(lk)/. . .";
+				   document.getElementById("ikki").innerText = "13 : 30 | Jismoniy tar.";
+				   document.getElementById("uch").innerText = "15 : 00 | Fizika(lk)";
+                   document.getElementById("tort").innerText = "16 : 30 | HFX(lb/m)";   break;
+			case "Chorshanba" : document.write("<ul><p><li>Chorshanba</li></p><li>BBA(m.)</li><li>Oliy M.(l.)</li><li>Fizikia(lb./m.)</li>");
+			       document.getElementById("kun").innerText = "Chorshanba";
+				   document.getElementById("bir").innerText = "11 : 30 | BBA(m)";
+				   document.getElementById("ikki").innerText = "13 : 30 | Oliy M.(lk)";
+				   document.getElementById("uch").innerText = "15 : 00 | Fizika(lb/m)";
+				   document.getElementById("tort").innerText = "---";
+				   break;
+			case "Payshanba" : document.write("<ul><p><li>Payshanba</li></p><li>. . ./Oliy M.(l.)</li><li>MC va C(l.)</li><li>C++ das.(l.)</li><li>MC va C(m.)/. . .</li>");
+			       document.getElementById("kun").innerText = "Payshanba";
+				   document.getElementById("bir").innerText = "11 : 30 | . . ./Oliy M.(lk)";
+				   document.getElementById("ikki").innerText = "13 : 30 | MC va C(lk)";
+				   document.getElementById("uch").innerText = "15 : 00 | C++ das.(lk)";
+				   document.getElementById("tort").innerText = "16 : 30 | MC va C(m.)/. . .";
+				   break;
+			case "Juma" : document.write("<ul><p><li>Juma</li></p><li>Mal. tuz(m)/. . .</li><li>C++ das.(lb.)</li><li>Fizikia(lb.)</li>");
+			       document.getElementById("kun").innerText = "Juma";
+				   document.getElementById("bir").innerText = "13 : 30 | Mal. tuz(m)/. . .";
+				   document.getElementById("ikki").innerText = "15 : 00 | C++ das.(lb)";
+				   document.getElementById("uch").innerText = "16 : 30 | Fizika(lb)";
+				   document.getElementById("tort").innerText = "---";
+			       break;
+			case "Shanba" : document.write("<ul><p><li>Shanba</li></p><li>. . ./C++ das.(lb.)</li><li>Oliy M.(m.)</li><li>BBA(l.)</li><li>Mal. tuz.(lb.)</li>");
+			       document.getElementById("kun").innerText = "Shanba";
+				   document.getElementById("bir").innerText = "11 : 30 | . . ./C++ das.(lb)";
+				   document.getElementById("ikki").innerText = "13 : 30 | Oliy M.(m)";
+				   document.getElementById("uch").innerText = "15 : 00 | BBA(lk)";
+				   document.getElementById("tort").innerText = "16 : 30 | Mal. tuz.(lb)";
+				   
+				   break;
+			case "Yakshanba" : document.getElementById("kun").innerText = "Yakshanba";
+                               document.getElementById("bir").innerText = "Dam olish kuni";			break;
+            default : document.write("<p>Bunday hafta kuni yo'q! Iltimos boshqattan kiriting!</p>")
+			       document.getElementById("kun").innerText ="Bunday hafta kuni yo'q! Iltimos boshqattan kiriting!";
+				   document.getElementById("bir").innerText = "-";
+				   document.getElementById("ikki").innerText = "-";
+				   document.getElementById("uch").innerText = "-";
+				   document.getElementById("tort").innerText = "-";
+		    }*/
+   </script>
+</body>
+</html>
